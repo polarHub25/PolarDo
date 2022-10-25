@@ -12,9 +12,9 @@ import java.sql.Timestamp;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_Board")
+@Table(name = "tb_LiveBoard")
 @Entity
-public class ToDoBoard {
+public class LiveBoard {
 
     //- 게시글 테이블 ( id , 사용자 id , 제목 , 글 내용 , 등록일 , 수정일 )
     @Id
@@ -25,10 +25,10 @@ public class ToDoBoard {
     private String userId;
 
     @Column(length = 200 , nullable = false)
-    private String toDoTitle;
+    private String boardTitle;
 
     @Column(columnDefinition = "text" , nullable = false)
-    private String toDoContent;
+    private String boardContent;
 
     @CreationTimestamp
     private Timestamp createDate;

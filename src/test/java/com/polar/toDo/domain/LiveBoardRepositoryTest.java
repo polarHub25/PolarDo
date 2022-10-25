@@ -3,28 +3,27 @@ package com.polar.toDo.domain;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.task.SyncTaskExecutor;
 
 import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
-public class ToDoBoardRepositoryTest {
+public class LiveBoardRepositoryTest {
 
     @Autowired
-    ToDoBoardRepository todoRepository;
+    LiveBoardRepository liveBoardRepository;
 
     @Test
     public void InsertTest(){
         IntStream.rangeClosed(1, 10).forEach(i -> {
-            ToDoBoard toDoBoard = ToDoBoard.builder()
+            LiveBoard liveBoard = LiveBoard.builder()
                     .userId("SampleUser"+i)
-                    .toDoTitle("SampleTitle"+i)
-                    .toDoContent("Sample..." + i)
+                    .boardTitle("SampleTitle"+i)
+                    .boardContent("Sample..." + i)
                     .build();
 
             //create!!
-            todoRepository.save(toDoBoard);
+            liveBoardRepository.save(liveBoard);
         });
     }
     @Test
@@ -32,33 +31,33 @@ public class ToDoBoardRepositoryTest {
 
         Long id = 10L;
 
-        Optional<ToDoBoard> result = todoRepository.findById(id);
+        Optional<LiveBoard> result = liveBoardRepository.findById(id);
 
         System.out.println("=================================================");
 
         if(result.isPresent()){
-            ToDoBoard toDo = result.get();
+            LiveBoard toDo = result.get();
             System.out.println(toDo);
         }
     }
 
     @Test
     public void UpdateTest(){
-        ToDoBoard toDoBoard = ToDoBoard.builder()
+        LiveBoard liveBoard = LiveBoard.builder()
                             .id(10L)
                             .userId("SampleUser10")
-                            .toDoTitle("SampleTitle10")
-                            .toDoContent("UpdateTest...")
+                            .boardTitle("SampleTitle10")
+                            .boardContent("UpdateTest...")
                             .build();
 
-        todoRepository.save(toDoBoard);
+        liveBoardRepository.save(liveBoard);
     }
     @Test
     public void DeleteTest(){
 
         Long id = 10L;
 
-        todoRepository.deleteById(id);
+        liveBoardRepository.deleteById(id);
     }
 
 }
