@@ -1,0 +1,51 @@
+package com.polar.toDo.domain.user;
+
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
+
+import javax.persistence.*;
+
+@NoArgsConstructor(access = AccessLevel.PROTECTED) //기본 생성자 만들어줌
+@DynamicUpdate
+@Entity
+@Getter
+@Table(name="tb_User")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private Long id;
+
+    @Column(name = "user_name"  , nullable = false)
+    private String name;
+
+    @Column(name = "email"  , nullable = false)
+    private String email;
+
+    @Column(name = "provider"  , nullable = false)
+    private String provider;
+
+    @Column(name = "user_nick"  , nullable = true , unique = true)
+    private String nickName;
+
+    @Builder
+    public User(Long id, String name, String email, String provider, String nickName){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.provider = provider;
+        this.nickName = nickName;
+    }
+
+    public User update(String name, String email){
+        this.name = name;
+        this.email = email;
+
+        return this;
+    }
+
+}
