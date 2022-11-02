@@ -1,4 +1,4 @@
-package com.polar.toDo.domain;
+package com.polar.toDo.domain.liveBoard;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

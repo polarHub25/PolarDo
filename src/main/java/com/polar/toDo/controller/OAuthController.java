@@ -16,7 +16,7 @@ public class OAuthController {
     public String oauthLoginInfo(Authentication authentication){
         //oAuth2User.toString() 예시 : Name: [2346930276], Granted Authorities: [[USER]], User Attributes: [{id=2346930276, provider=kakao, name=김준우, email=bababoll@naver.com}]
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
-        //attributes.toString() 예시 : {id=2346930276, provider=kakao, name=김준우, email=bababoll@naver.com}
+        //attributes.toString() 예시 : {id=2346930276, provider=google, name=polar, email=polar@gmail.com}
         Map<String, Object> attributes = oAuth2User.getAttributes();
         return attributes.toString();
     }
