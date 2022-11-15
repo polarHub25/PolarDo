@@ -17,10 +17,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "userId")
     private Long id;
 
-    @Column(name = "user_name"  , nullable = false)
+    @Column(name = "userName"  , nullable = false)
     private String name;
 
     @Column(name = "email"  , nullable = false)
@@ -29,7 +29,7 @@ public class User {
     @Column(name = "provider"  , nullable = false)
     private String provider;
 
-    @Column(name = "user_nick"  , nullable = true , unique = true)
+    @Column(name = "userNick"  , nullable = true , unique = true)
     private String nickName;
 
     @Builder

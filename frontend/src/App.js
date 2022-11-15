@@ -9,21 +9,37 @@ import Home from './routes/Home';
 function App() {
 
 const [message, setMessage] = useState([]);
-useEffect(()=>{
-   
-},[]);
+
+const [userName, setUserName] = useState("");
+const [showLoginModal, setShowLoginModal] = useState(false);
+
+const [userId, setUserId] = useState("");
+const [userEmail, setUserEmail] = useState("");
+
+useEffect(() => {
+  const appName = "LiveRARY";
+  document.title = appName;
+
+}, []);
 
   return (
     <div className="App">
       <Router>
         <Header
-
+          setUserName={setUserName}
+          setShowLoginModal={setShowLoginModal}
+          setUserId={setUserId}
+          setUserEmail={setUserEmail}
         />
       <hr />
       <Routes>
         <Route path="/" 
         element={
-          <Home/>
+          <Home
+          userName={userName}
+          showLoginModal={showLoginModal}
+          setShowLoginModal={setShowLoginModal}
+          />
         }
         />
       </Routes>
