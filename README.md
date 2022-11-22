@@ -11,7 +11,7 @@
 ![Git](https://img.shields.io/badge/Git-F05032.svg?&style=for-the-badge&logo=Git&logoColor=black)
 
 #### 기간 
-2022-10-24 ~ 
+2022-10-24 ~ (아이엘츠 시험(11/30) 이후 다시 시작 예정)
 
 #### 목표
 - 1차 목표 : Sns연동 로그인 / 글 등록 / 수정 / 삭제 / 글 상세조회 / 목록 조회 / 댓글기능 
