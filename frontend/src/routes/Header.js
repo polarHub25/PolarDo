@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import styles from "./Header.css";
+import "./Header.css";
 import { InputGroup } from "react-bootstrap";
 import { FormControl } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -54,32 +54,32 @@ function Header(props){
   }, []);
 
     return (
-        <div className={styles.header}>
-        <div className={styles.parent}>
-            <div className={styles.left_div}>
-                <a href="/" className={styles.header_title}>
+        <div className="header">
+        <div className="parent}">
+            <div className="left_div">
+                <a href="/" className="header_title">
                   <img src="/LiveRARY.png" />
                 </a>
             </div>
-            <div className={styles.middle_div}>
-              <div className={styles.btn1}>
-                <InputGroup className="mb-3" id={styles.input}>
+            <div className="middle_div">
+              <div className="btn1">
+                <InputGroup className="mb-3" id="input">
                     <FormControl 
                     placeholder="Search Word here...."
                     aria-label="Search Word here...."
                     aria-describedby="basic-addon2"
                     onChange={onChangeSearchBar}
                     />
-                <Button variant="dark" className={styles.searchBtn} id="button-search" size="lg" active
+                <Button variant="dark" className="searchBtn" id="button-search" size="lg" active
                 href="" 
                 >
                 Search
                 </Button>
                 </InputGroup>
               </div>
-                <div className={styles.btn3}>
+                <div className="btnLogin">
                 {userName === "" ? (
-                        <Button variant="dark" className={styles.searchBtn} id="button-search" size="lg" active
+                        <Button variant="dark" className="searchBtn" id="button-search" size="lg" active
                         href="/signin" onClick={loginBtnClicked} >
                         로그인
                         </Button>
